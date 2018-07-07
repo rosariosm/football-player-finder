@@ -1,9 +1,13 @@
 import React from 'react'
+import { Container } from 'semantic-ui-react'
+import MainHeader from './MainHeader'
+import Content from './Content'
 
 const App = () => (
-    <div className='container'>
-      <h1>Mi app</h1>
-    </div>
+   <Container>
+      <MainHeader />
+      <Content />
+    </Container>
 );
 
 export default App;
