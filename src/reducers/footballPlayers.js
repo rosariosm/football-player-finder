@@ -19,8 +19,7 @@ export default (state = defaultState, action) => {
     case FETCH_PLAYERS_SUCCESS:
       return {
         ...state,
-        contacts: action.payload,
-        filteredContacts: action.payload,
+        players: action.payload,
         is_fetching: false
       };
     case FETCH_PLAYERS_FAILURE:

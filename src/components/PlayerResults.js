@@ -1,6 +1,8 @@
 import React from 'react';
+import { bindActionCreators } from 'redux'
 import {Container, Loader, Header, Icon} from 'semantic-ui-react';
 import { connect } from 'react-redux'
+import { fetchPlayers } from '../actions/footballPlayers'
 
 
 const mapStateToProps = state => ({
@@ -8,7 +10,16 @@ const mapStateToProps = state => ({
 });
 
 
+const mapDispatchToProps = dispatch => bindActionCreators({
+  fetchPlayers
+}, dispatch)
+
+
 class PlayerResults extends React.Component {
+  componentDidMount() {
+    this.props.fetchPlayers();
+  }
+
   render() {
     const players = this.props.players;
 
@@ -64,7 +75,7 @@ class PlayerResults extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(PlayerResults);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerResults);
 
 
 
