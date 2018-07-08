@@ -1,8 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
-import {Container, Loader, Header, Icon} from 'semantic-ui-react';
+import {Container, Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { fetchPlayers } from '../actions/footballPlayers'
+import PlayerRow from '../components/PlayerRow'
 
 
 const mapStateToProps = state => ({
@@ -60,22 +61,32 @@ class PlayerResults extends React.Component {
     }
 
     return (
+      <Transition transitionOnMount={true} animation='fade' duration={500}>
       <Container>
-         <ul>
-          {
-            players.map(player => {
-              return (
-                <li>{player.name}</li>
-              );
-            })
-          }         
-        </ul>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Player</Table.HeaderCell>
+              <Table.HeaderCell>Position</Table.HeaderCell>
+              <Table.HeaderCell>Nacionality</Table.HeaderCell>
+              <Table.HeaderCell>Age</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          
+          <Table.Body>
+            {
+              players.map(player => {
+                return (
+                  <PlayerRow player={player} key={player.name} />
+                );
+              })
+            }
+          </Table.Body>
+        </Table>
       </Container>
+      </Transition>
     );
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerResults);
-
-
-
