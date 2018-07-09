@@ -10,7 +10,7 @@ const PlayerRow = props => {
       <Table.Cell>{player.name}</Table.Cell>
       <Table.Cell>{player.position}</Table.Cell>
       <Table.Cell>{player.nationality}</Table.Cell>
-      <Table.Cell>{player.dateOfBirth}</Table.Cell>     
+      <Table.Cell>{player.age}</Table.Cell>     
     </Table.Row>
   ) 
 };

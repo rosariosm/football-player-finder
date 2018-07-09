@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Form, Select } from 'semantic-ui-react'
 import NumericInput from 'react-numeric-input';
 
-
 class PlayerFilters extends React.Component {
   state = { name: '', position: '', age: '' }
 
@@ -19,7 +18,7 @@ class PlayerFilters extends React.Component {
   }
 
   render() {
-    const { name, position, age, submittedName, submittedPosition, submittedAge } = this.state
+    const { name, position, age} = this.state
 
     const positions = [
         {key: 'attackingMidfield', value: 'Attacking Midfield', text: 'Attacking Midfield' },

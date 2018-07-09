@@ -1,28 +1,21 @@
 import React from 'react';
-import { bindActionCreators } from 'redux'
 import {Container, Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
 import { connect } from 'react-redux'
-import { fetchPlayers } from '../actions/footballPlayers'
+import { getNormalizedPlayers } from '../selectors'
 import PlayerRow from '../components/PlayerRow'
 
 
-const mapStateToProps = state => ({
-  ...state.footballPlayers
+const mapStateToProps = state => ({  
+  normalizedPlayers: getNormalizedPlayers(state),
+  error: state.footballPlayers.error,
+  is_fetching: state.footballPlayers.is_fetching
 });
 
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchPlayers
-}, dispatch)
 
-
-class PlayerResults extends React.Component {
-  componentDidMount() {
-    this.props.fetchPlayers();
-  }
-
+class PlayerResults extends React.Component {  
   render() {
-    const players = this.props.players;
+    const players = this.props.normalizedPlayers;
 
     if (this.props.is_fetching){
       return (
@@ -89,4 +82,4 @@ class PlayerResults extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerResults);
+export default connect(mapStateToProps, () => ({}))(PlayerResults);
