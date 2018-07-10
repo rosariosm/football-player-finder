@@ -6,12 +6,13 @@ import  App  from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
 import 'semantic-ui-css/semantic.min.css';
+import './index.css';
 
 
 
 ReactDOM.render((
-      <Provider store={ store }>        
-        <App />        
+      <Provider store={ store }>
+        <App />
       </Provider>
 	), document.getElementById('root'));
 registerServiceWorker();

@@ -1,6 +1,5 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { Container } from 'semantic-ui-react'
 import MainHeader from '../components/MainHeader'
 import Content from '../components/Content'
 import { connect } from 'react-redux'
@@ -18,10 +17,10 @@ class App extends React.Component {
 
   render() {
   	return (
-      <Container>
+      <div>
         <MainHeader />
         <Content />
-      </Container>
+      </div>
     )
   }
 }

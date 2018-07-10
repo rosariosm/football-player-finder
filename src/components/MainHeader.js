@@ -1,11 +1,19 @@
-import React from 'react'
-import { Header, Icon } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Container, Menu, Icon } from 'semantic-ui-react'
 
-const MainHeader = () => (
-  <Header as='h1' dividing>
-    <Icon name='futbol outline' />
-    <Header.Content>Football Player Finder</Header.Content>
-  </Header>
-)
+export default class MainHeader extends Component {
 
-export default MainHeader
+  render() {
+
+    return (
+      <Menu className='gradient' inverted size={'huge'}>
+        <Container fluid>
+          <Menu.Item name='home' className={'borderless'}>
+            <Icon name='futbol outline' />
+            <strong>Football Player Finder</strong>
+          </Menu.Item>
+          </Container>
+      </Menu>
+    )
+  }
+}

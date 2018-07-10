@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.ui.container {
+  padding: 1em;
+}
+
+.ui.gradient.menu {
+  background-image: linear-gradient(to right top, #096f63, #008c67, #00a85e, #46c245, #84da00);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 0!important;
+}
+
+.ui.green.button {
+  background-color: #00a45f;
+}

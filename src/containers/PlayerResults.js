@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
+import {Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { getVisiblePlayers } from '../selectors'
 import PlayerRow from '../components/PlayerRow'
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 
 
 
-class PlayerResults extends React.Component {  
+class PlayerResults extends React.Component {
   render() {
     const players = this.props.visiblePlayers;
 
@@ -57,21 +57,21 @@ class PlayerResults extends React.Component {
 
     return (
       <Transition transitionOnMount={true} animation='fade' duration={500}>
-      <Container>
-        <Table celled>
+      <div>
+        <Table celled >
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Player</Table.HeaderCell>
-              <Table.HeaderCell>Position</Table.HeaderCell>
-              <Table.HeaderCell>Nacionality</Table.HeaderCell>
-              <Table.HeaderCell>Age</Table.HeaderCell>
+              <Table.HeaderCell width={6}>Player</Table.HeaderCell>
+              <Table.HeaderCell width={4}>Position</Table.HeaderCell>
+              <Table.HeaderCell width={4}>Nacionality</Table.HeaderCell>
+              <Table.HeaderCell width={2}>Age</Table.HeaderCell>
             </Table.Row>
-          </Table.Header>          
+          </Table.Header>
           <Table.Body>
             {
               players.map(player => {
                 return (
-                  
+
                   <PlayerRow player={player} key={player.name} />
 
                 );
@@ -79,7 +79,7 @@ class PlayerResults extends React.Component {
             }
           </Table.Body>
         </Table>
-      </Container>
+      </div>
       </Transition>
     );
   }
