@@ -17,3 +17,15 @@ body {
 .ui.green.button {
   background-color: #00a45f;
 }
+
+.ui.form .fields {
+  margin: 0;
+}
+
+.ui.form .fields:last-child  .field {
+  margin-bottom: 1em;
+}
+
+.react-numeric-input {
+  width: 100%;
+}
