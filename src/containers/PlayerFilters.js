@@ -1,6 +1,15 @@
 import React from 'react'
-import { Container, Form, Select } from 'semantic-ui-react'
-import NumericInput from 'react-numeric-input';
+import { Container, Form, Select, Button } from 'semantic-ui-react'
+import { bindActionCreators } from 'redux'
+import NumericInput from 'react-numeric-input'
+import { connect } from 'react-redux'
+import { updateFilters } from '../actions/footballPlayers'
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  updateFilters
+}, dispatch)
+
 
 class PlayerFilters extends React.Component {
   state = { name: '', position: '', age: '' }
@@ -15,10 +24,30 @@ class PlayerFilters extends React.Component {
 
   handleSubmit = () => {
     const { name, position, age } = this.state
+    let filters = {}
+
+    if (name !== ''){
+    	filters.name = name
+    }
+
+    if (position !== ''){
+    	filters.position = position
+    }
+
+    if (age !== ''){
+    	filters.age = age
+    }    
+
+    this.props.updateFilters(filters);
+  }
+
+  handleClean = () => {
+  	this.setState({ name: '', position: '', age: '' })  
+  	this.props.updateFilters(null)
   }
 
   render() {
-    const { name, position, age} = this.state
+    const { name, age} = this.state
 
     const positions = [
         {key: 'attackingMidfield', value: 'Attacking Midfield', text: 'Attacking Midfield' },
@@ -49,6 +78,7 @@ class PlayerFilters extends React.Component {
               onChange={this.handleNumberChange}
             />
             <Form.Button content='Search' />
+            <Button content='Clean' onClick={this.handleClean}/>            
           </Form.Group>
         </Form>        
       </Container>
@@ -56,4 +86,5 @@ class PlayerFilters extends React.Component {
   }
 }
 
-export default PlayerFilters
+
+export default connect(() => ({}), mapDispatchToProps )(PlayerFilters);

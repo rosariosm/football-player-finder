@@ -2,7 +2,8 @@ import  agent from '../agent';
 import {
   FETCH_PLAYERS_PENDING,
   FETCH_PLAYERS_SUCCESS,
-  FETCH_PLAYERS_FAILURE
+  FETCH_PLAYERS_FAILURE,
+  UPDATE_FILTERS
 } from '../constants/actionTypes'
 
 
@@ -24,6 +25,13 @@ export const fetchPlayersFailure = (error) => {
     type: FETCH_PLAYERS_FAILURE,
     payload: error
   };
+}
+
+export const updateFilters = (filters) => {
+  return {
+    type: UPDATE_FILTERS,
+    payload: filters
+  }
 }
 
 export function fetchPlayers(options) {

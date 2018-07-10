@@ -1,21 +1,23 @@
 import React from 'react';
 import {Container, Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
 import { connect } from 'react-redux'
-import { getNormalizedPlayers } from '../selectors'
+import { getVisiblePlayers } from '../selectors'
 import PlayerRow from '../components/PlayerRow'
 
 
-const mapStateToProps = state => ({  
-  normalizedPlayers: getNormalizedPlayers(state),
-  error: state.footballPlayers.error,
-  is_fetching: state.footballPlayers.is_fetching
-});
+const mapStateToProps = state => {
+  return {
+    visiblePlayers: getVisiblePlayers(state),
+    error: state.footballPlayers.error,
+    is_fetching: state.footballPlayers.is_fetching
+  }
+}
 
 
 
 class PlayerResults extends React.Component {  
   render() {
-    const players = this.props.normalizedPlayers;
+    const players = this.props.visiblePlayers;
 
     if (this.props.is_fetching){
       return (
@@ -64,13 +66,14 @@ class PlayerResults extends React.Component {
               <Table.HeaderCell>Nacionality</Table.HeaderCell>
               <Table.HeaderCell>Age</Table.HeaderCell>
             </Table.Row>
-          </Table.Header>
-          
+          </Table.Header>          
           <Table.Body>
             {
               players.map(player => {
                 return (
+                  
                   <PlayerRow player={player} key={player.name} />
+
                 );
               })
             }

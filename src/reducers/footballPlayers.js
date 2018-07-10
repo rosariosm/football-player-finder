@@ -1,12 +1,14 @@
 import { FETCH_PLAYERS_PENDING,
          FETCH_PLAYERS_SUCCESS,
-         FETCH_PLAYERS_FAILURE
+         FETCH_PLAYERS_FAILURE,
+         UPDATE_FILTERS
        } from '../constants/actionTypes';
 
 const defaultState = {
   players: [],
   error: null,
-  is_fetching: false
+  is_fetching: false,
+  filters: null,
 };
 
 export default (state = defaultState, action) => {
@@ -27,6 +29,11 @@ export default (state = defaultState, action) => {
         ...state,
         is_fetching: false,
         error: action.payload
+      };
+    case UPDATE_FILTERS:
+      return {
+        ...state,
+        filters: action.payload
       };
     default: return state;
   }
