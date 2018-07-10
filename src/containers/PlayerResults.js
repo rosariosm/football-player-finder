@@ -1,5 +1,5 @@
 import React from 'react';
-import {Loader, Header, Icon, Table, Transition} from 'semantic-ui-react';
+import {Loader, Header, Icon, Table, Transition, Message} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { getVisiblePlayers } from '../selectors'
 import PlayerRow from '../components/PlayerRow'
@@ -29,29 +29,21 @@ class PlayerResults extends React.Component {
 
     if(this.props.error){
       return (
-        <div className='full-viewport centered-aligned'>
-        <Header as='h2' icon textAlign='center'>
-          <Icon name='bug' />
-            Error
-          <Header.Subheader>
-            Algo salió mal. Intentá nuevamente
-          </Header.Subheader>
-        </Header>
-        </div>
+        <Message
+          icon='warning'
+          header='Sorry, something went wrong'
+          content='Please refresh your browser and try again'
+        />
       );
     }
 
     if (players.length ===  0){
       return (
-        <div className='full-viewport centered-aligned'>
-        <Header as='h2' icon textAlign='center'>
-          <Icon name='bug' />
-            No se encontraron resultados
-          <Header.Subheader>
-            Probá refinando tu búsqueda
-          </Header.Subheader>
-        </Header>
-        </div>
+        <Message
+          icon='warning'
+          header='Sorry'
+          content="We couldn't find any results"
+        />
       );
     }
 
