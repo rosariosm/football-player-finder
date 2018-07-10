@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.2",
+    "ajv-keywords": "^3.2.0",
+    "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -19,7 +22,7 @@
     "superagent": "^3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

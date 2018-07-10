@@ -3,6 +3,7 @@ import { Form, Select, Icon } from 'semantic-ui-react'
 import { bindActionCreators } from 'redux'
 import NumericInput from 'react-numeric-input'
 import { connect } from 'react-redux'
+import _ from 'lodash'
 import { updateFilters } from '../actions/footballPlayers'
 
 
@@ -38,16 +39,18 @@ class PlayerFilters extends React.Component {
     	filters.age = age
     }
 
-    this.props.updateFilters(filters);
+    if (! _.isEmpty(filters)){
+      this.props.updateFilters(filters);
+    }
   }
 
-  handleClean = () => {
+  handleClear = () => {
   	this.setState({ name: '', position: '', age: '' })
   	this.props.updateFilters(null)
   }
 
   render() {
-    const { name, age} = this.state
+    const { name, position, age} = this.state
 
     const positions = [
         {key: '', value: '', text: 'None'},
@@ -68,7 +71,7 @@ class PlayerFilters extends React.Component {
         <Form onSubmit={this.handleSubmit} >
           <Form.Group>
             <Form.Input placeholder='Name' name='name' value={name} onChange={this.handleChange} width={4}/>
-            <Form.Field control={Select}  placeholder='Choose a position...' name='position' options={positions} onChange={this.handleChange} width={4} />
+            <Form.Field control={Select}  placeholder='Choose a position...' value={position} name='position' options={positions} onChange={this.handleChange} width={4} />
             <Form.Field
               control={NumericInput}
               min={18}
@@ -82,8 +85,8 @@ class PlayerFilters extends React.Component {
             <Form.Button floated='right'color='green' width={2} fluid>
               <Icon name='search' /> Search
             </Form.Button>
-            <Form.Button floated='right' basic onClick={this.handleClean} width={2} fluid>
-              <Icon name='delete' /> Clean
+            <Form.Button floated='right' basic onClick={this.handleClear} width={2} fluid>
+              <Icon name='delete' /> Clear
             </Form.Button>
           </Form.Group>
         </Form>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Loader, Header, Icon, Table, Transition, Message} from 'semantic-ui-react';
+import {Loader, Table, Transition, Message} from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import { getVisiblePlayers } from '../selectors'
 import PlayerRow from '../components/PlayerRow'
@@ -12,8 +12,6 @@ const mapStateToProps = state => {
     is_fetching: state.footballPlayers.is_fetching
   }
 }
-
-
 
 class PlayerResults extends React.Component {
   render() {
