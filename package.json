@@ -24,7 +24,22 @@
   "scripts": {
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "setupFiles": [
+      "./__tests__/setup.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.52",
+    "babel-core": "^7.0.0-bridge.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1"
   }
 }
