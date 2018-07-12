@@ -47,7 +47,7 @@ class PlayerResults extends React.Component {
 
     return (
       <Transition transitionOnMount={true} animation='fade' duration={500}>
-      <div>
+      <div className='players-result'>
         <Table celled >
           <Table.Header>
             <Table.Row>

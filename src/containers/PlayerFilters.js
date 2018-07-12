@@ -68,7 +68,7 @@ class PlayerFilters extends React.Component {
 
     return (
 
-        <Form onSubmit={this.handleSubmit} >
+        <Form onSubmit={this.handleSubmit} className='filter-players-form' >
           <Form.Group>
             <Form.Input placeholder='Name' name='name' value={name} onChange={this.handleChange} width={4}/>
             <Form.Field control={Select}  placeholder='Choose a position...' value={position} name='position' options={positions} onChange={this.handleChange} width={4} />

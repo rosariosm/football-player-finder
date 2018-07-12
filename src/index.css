@@ -15,7 +15,7 @@ body {
 }
 
 .ui.green.button {
-  background-color: #00a45f;
+  background-image: linear-gradient(-180deg, #008d67, #00a85e, #2ab74f);
 }
 
 .ui.form .fields {
