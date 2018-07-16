@@ -37,7 +37,7 @@ export const updateFilters = (filters) => {
 export function fetchPlayers(options) {
   return function (dispatch) {
     dispatch(fetchPlayersPending());
-    agent.PlayerRequests.all(options)
+    return agent.PlayerRequests.all(options)
       .then( response => { dispatch(fetchPlayersSuccess(response)) })
       .catch(err => {  dispatch(fetchPlayersFailure(err));
       });
