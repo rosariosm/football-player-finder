@@ -38,8 +38,8 @@ export function fetchPlayers(options) {
   return function (dispatch) {
     dispatch(fetchPlayersPending());
     return agent.PlayerRequests.all(options)
-      .then( response => { dispatch(fetchPlayersSuccess(response)) })
-      .catch(err => {  dispatch(fetchPlayersFailure(err));
+      .then( response => { return dispatch(fetchPlayersSuccess(response)) })
+      .catch(err => {  return dispatch(fetchPlayersFailure(err));
       });
   }
 }
