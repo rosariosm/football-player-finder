@@ -1,6 +1,6 @@
 # Football Player Finder
 
-This is a simple React application that shows a list of football players and the user can filter them according to different values. It was built with [create-react-app](https://github.com/facebook/create-react-app), uses [Semantic-ui](https://github.com/Semantic-Org/Semantic-UI-React) for the UI, and tested using jest[jest](https://github.com/facebook/jest) and enzyme[enzyme](https://github.com/airbnb/enzyme).
+This is a simple React application that shows a list of football players and the user can filter them according to different values. It was built with [create-react-app](https://github.com/facebook/create-react-app), uses [Semantic-ui-react](https://github.com/Semantic-Org/Semantic-UI-React) for the UI, and tested using [jest](https://github.com/facebook/jest) and [enzyme](https://github.com/airbnb/enzyme).
 
 ## Dependencies
 
