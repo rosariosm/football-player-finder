@@ -1,5 +1,5 @@
 import React              from 'react';
-import { shallow } from 'enzyme';
+import { shallow }        from 'enzyme';
 import { store }          from '../../__mocks__/store-mock'
 
 import App                from '../../src/containers/App';

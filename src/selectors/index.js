@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 import moment from 'moment'
+import _ from 'lodash'
 
 const getPlayers = (state) => state.footballPlayers.players
 const getFilters = (state) => state.footballPlayers.filters
@@ -18,16 +19,16 @@ export const getNormalizedPlayers = createSelector(
 
 export const getVisiblePlayers = createSelector(
  [ getNormalizedPlayers, getFilters ],
- (players, filters) => {    
-    if (!filters){
+ (players, filters) => {  
+    if ( _.isEmpty(filters)){
       return players
     }
-    else{ 
+    else{    
       return players.filter(filterPlayer, filters)
     }
  }
 )
 
 function filterPlayer(player){
-  return Object.keys(this).every((key) => player[key] === this[key]);
+  return Object.keys(this).every((key) => key == 'name' ? player[key].toLowerCase().indexOf(this[key].toLowerCase()) >= 0 :  player[key] === this[key] );
 }

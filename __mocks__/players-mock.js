@@ -3,3 +3,9 @@ export const players = [
           {"contractUntil":"2019-06-30","dateOfBirth":"1990-11-07","jerseyNumber":1,"name":"David de Gea","nationality":"Spain","position":"Keeper"},
           {"contractUntil":"2021-06-30","dateOfBirth":"1987-02-22","jerseyNumber":20,"name":"Sergio Romero","nationality":"Argentina","position":"Keeper"}
         ]
+
+export const normalizedPlayers = [
+          {"age":25,"name":"Romelu Lukaku","nationality":"Belgium","position":"Centre-Forward"},
+          {"age":27,"name":"David de Gea","nationality":"Spain","position":"Keeper"},
+          {"age":31,"name":"Sergio Romero","nationality":"Argentina","position":"Keeper"}
+        ]
