@@ -24,7 +24,13 @@ npm install
 
 And that's it!
 
-## Running tests
+## Running app and tests
+
+To run de app execute 
+
+```
+npm start
+```
 
 To run the tests execute
 

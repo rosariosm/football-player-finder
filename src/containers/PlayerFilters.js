@@ -82,10 +82,10 @@ class PlayerFilters extends React.Component {
               onChange={this.handleNumberChange}
               width={4}
             />
-            <Form.Button floated='right'color='green' width={2} fluid>
+            <Form.Button className='submit-btn' floated='right'color='green' width={2} fluid>
               <Icon name='search' /> Search
             </Form.Button>
-            <Form.Button floated='right' basic onClick={this.handleClear} width={2} fluid>
+            <Form.Button className='clear-btn' floated='right' basic onClick={this.handleClear} width={2} fluid>
               <Icon name='delete' /> Clear
             </Form.Button>
           </Form.Group>
