@@ -29,3 +29,317 @@ body {
 .react-numeric-input {
   width: 100%;
 }
+
+/*overlapped carrousel*/
+
+/*html, body, main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#carousel {
+  position: relative;
+  height: 400px;
+  top: 50%;
+  overflow: hidden;
+  -webkit-transform: translateY(-50%);
+  -moz-transform:    translateY(-50%);
+  -ms-transform:     translateY(-50%);
+  -o-transform:      translateY(-50%);
+  transform:         translateY(-50%);
+}
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  -webkit-transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  -moz-transition:    transform 1s, left 1s, opacity 1s, z-index 0s;
+  -ms-transition:     transform 1s, left 1s, opacity 1s, z-index 0s;
+  -o-transition:      transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
+#carousel div img {
+  width: 400px;
+  transition: width 1s;
+  -webkit-transition:  width 1s;
+  -moz-transition:     width 1s;
+  -ms-transition:      width 1s;
+  -o-transition:       width 1s;
+}
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  -webkit-transform: translateY(50%) translateX(-50%);
+  -moz-transform:    translateY(50%) translateX(-50%);
+  -ms-transform:     translateY(50%) translateX(-50%);
+  -o-transform:      translateY(50%) translateX(-50%);
+  transform:         translateY(50%) translateX(-50%);
+}
+#carousel div.hideLeft img {
+  width: 200px;
+}
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  -webkit-transform: translateY(50%) translateX(-50%);
+  -moz-transform:    translateY(50%) translateX(-50%);
+  -ms-transform:     translateY(50%) translateX(-50%);
+  -o-transform:      translateY(50%) translateX(-50%);
+  transform:         translateY(50%) translateX(-50%);
+}
+#carousel div.hideRight img {
+  width: 200px;
+}
+#carousel div.prev {
+  z-index: 5;
+  left: 34%;
+  -webkit-transform: translateY(50px) translateX(-50%);
+  -moz-transform:    translateY(50px) translateX(-50%);
+  -ms-transform:     translateY(50px) translateX(-50%);
+  -o-transform:      translateY(50px) translateX(-50%);
+  transform:         translateY(50px) translateX(-50%);
+}
+#carousel div.prev img {
+  width: 300px;
+}
+#carousel div.prevLeftSecond {
+  left: 0%;
+  opacity: 0;
+  -webkit-transform: translateY(50%) translateX(-50%);
+  -moz-transform:    translateY(50%) translateX(-50%);
+  -ms-transform:     translateY(50%) translateX(-50%);
+  -o-transform:      translateY(50%) translateX(-50%);
+  transform:         translateY(50%) translateX(-50%);
+}
+#carousel div.prevLeftSecond img {
+  width: 200px;
+}
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  -webkit-transform: translateY(0px) translateX(-50%);
+  -moz-transform:    translateY(0px) translateX(-50%);
+  -ms-transform:     translateY(0px) translateX(-50%);
+  -o-transform:      translateY(0px) translateX(-50%);
+  transform:         translateY(0px) translateX(-50%);
+}
+#carousel div.next {
+  z-index: 5;
+  left: 66%;
+  -webkit-transform: translateY(50px) translateX(-50%);
+  -moz-transform:    translateY(50px) translateX(-50%);
+  -ms-transform:     translateY(50px) translateX(-50%);
+  -o-transform:      translateY(50px) translateX(-50%);
+  transform:         translateY(50px) translateX(-50%);
+}
+#carousel div.next img {
+  width: 300px;
+}
+#carousel div.nextRightSecond {
+  left: 100%;
+  opacity: 0;
+  -webkit-transform: translateY(50%) translateX(-50%);
+  -moz-transform:    translateY(50%) translateX(-50%);
+  -ms-transform:     translateY(50%) translateX(-50%);
+  -o-transform:      translateY(50%) translateX(-50%);
+  transform:         translateY(50%) translateX(-50%);
+}
+#carousel div.nextRightSecond img {
+  width: 200px;
+}
+
+.buttons {
+  position: fixed;
+  left: 51%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform:    translateX(-50%);
+  -ms-transform:     translateX(-50%);
+  -o-transform:      translateX(-50%);
+  transform:         translateX(-50%);
+  bottom: 10px;
+}*/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+body {
+  padding-top: 1em;  
+  font-family: 'Nunito';
+}
+.basedOn {
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+}
+.basedOn a, .basedOn a:visited, .basedOn a:hover, .basedOn a:active {
+  color: #ffeb3b;
+}
+#carousel {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.arrow {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background-color: #673ab7;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 30px;
+  z-index: 1000;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 500ms;
+}
+.arrow i {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+.arrow-right {
+  right: 0;
+}
+.arrow-left {
+  left: 0;
+}
+.arrow:hover {
+  background-color: #512da8;
+  color: #ffeb3b;
+}
+.item {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: box-shadow 1s, height 250ms, width 250ms, left 1s, margin-top 1s, line-height 250ms, background-color 1s;
+}
+.level-2 {
+  box-shadow: -0.1em 0.1em 0.2em #212121;
+  height: 72%;
+  width: 17%;
+  line-height: 72%;
+  background-color: #228291;
+  left: 15%;
+}
+.level-1 {
+  box-shadow: -0.2em 0.2em 0.4em #212121;
+  height: 78%;
+  width: 23%;
+  line-height: 78%;
+  background-color: #6796e5;
+  left: 30%;
+}
+.level0 {
+  box-shadow: 0 0.4em 0.8em #212121;
+  height: 85%;
+  width: 30%;
+  line-height: 85%;
+  background-color: #4ec9e1;
+  left: 50%;
+}
+.level1 {
+  box-shadow: 0.2em 0.2em 0.4em #212121;
+  height: 78%;
+  width: 23%;
+  line-height: 78%;
+  background-color: #6796e5;
+  left: 70%;
+}
+.level2 {
+  box-shadow: 0.1em 0.1em 0.2em #212121;
+  height: 72%;
+  width: 17%;
+  line-height: 72%;
+  background-color: #228291;
+  left: 85%;
+}
+.level-2, .level2 {
+  z-index: 0;
+}
+.level-1, .level1 {
+  z-index: 1;
+}
+.level0 {
+  z-index: 2;
+}
+.left-enter {
+  opacity: 0;
+  left: 85%;
+  height: -8%;
+  width: -8%;
+  line-height: 42%;
+}
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: 85%;
+  height: 72%;
+  width: 17%;
+  line-height: 72%;
+  transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms, margin-top 1s, line-height 1s;
+}
+.left-leave {
+  opacity: 1;
+  left: 15%;
+  height: 72%;
+  width: 17%;
+  line-height: 72%;
+  z-index: -1;
+}
+.left-leave.left-leave-active {
+  z-index: -1;
+  left: 15%;
+  opacity: 0;
+  height: -8%;
+  width: -8%;
+  line-height: 120px;
+  transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms, margin-top 1s, line-height 1s;
+}
+.right-enter {
+  opacity: 0;
+  left: 15%;
+  height: -8%;
+  width: -8%;
+  line-height: 42%;
+}
+.right-enter.right-enter-active {
+  left: 15%;
+  opacity: 1;
+  height: 72%;
+  line-height: 72%;
+  width: 17%;
+  transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms, margin-top 1s, line-height 1s;
+}
+.right-leave {
+  left: 85%;
+  height: 72%;
+  opacity: 1;
+  line-height: 72%;
+  width: 17%;
+}
+.right-leave.right-leave-active {
+  left: 85%;
+  opacity: 0;
+  height: -8%;
+  width: -8%;
+  line-height: 42%;
+  transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms, margin-top 1s, line-height 1s;
+}
+.noselect {
+  -webkit-user-select: none;
+  -html-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*# sourceMappingURL=styles.css.map */
